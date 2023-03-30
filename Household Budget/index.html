@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="fontello-9edca4e1/css/fontello.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <title>Household Budget</title>
+</head>
+<body>
+
+
+    <!-- This is a logo and front background-->   
+
+    <div class="container-fluid p-5 text-white text-center" id="BackGround">
+        <h1 class="move">Househ<img src="pictures/logo.png" style="width: 25px;" class="rounded-pill">ld budget</h1>
+        <p class="movee">We help in budget planning.</p>
+    </div>
+    
+    
+    <!-- This is a navigation bar--> 
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="pictures/logo.png" style="width: 40px;" class="rounded-pill">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <button id="contact-button" onclick="location.href=`#measage`">Contact </button>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <!--This is Income consumer input-->
+    <div class="container shadow rounded-3 mb-5 mt-5">
+        <div class="row p-1">
+            <p class="h1">Your Income</p>
+            <div class="col-3 mb-3 text-center">
+                <div class="form-group">
+                    <label for="pay">Pay:</label>
+                    <input type="number" id="pay" class="form-control" value="0">
+                </div>
+            </div>
+            <div class="col-3 mb-3 text-center">
+                <div class="form-group">
+                    <label for="bonus">Bonus:</label>
+                    <input type="number" id="bonus" class="form-control" value="0">
+                </div>
+            </div>
+            <div class="col-3 mb-3 text-center">
+                <button class="btn btn-outline mt-4" id="calculate">Sum</button>
+            </div>
+            <div class="col-3 mb-3 text-center">
+                <div class="form-group">
+                    <label for="total-value" class="result"> Total Income:</label>
+                    <input type="number" id="total-value" class="form-control" value="0">
+                </div>
+            </div>
+        </div>
+        <div class="row p-1">
+            <fieldset style="border: 2px solid #81599F;">
+                <legend style="padding: 2vh; text-align: left; font-size: larger"> Income Table:</legend>
+                <canvas id="myConsumentIncome" style="width: fit-content;"></canvas>
+            </fieldset>
+        </div>
+    </div>
+
+   <!--Expense tables number 1 -->
+
+    <div class="container shadow mb-5 mt-5 rounded-3">
+        <div class="row py-2">
+            <p class="h1">Your expenses</p>
+            <div class="col-md-6 mb-4">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Constantly expenses </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">Rent: </span>
+                                    <input type="text" class="form-control" id="rent" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">water:</span>
+                                    <input type="text" class="form-control" id="water" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">electricity: </span>
+                                    <input type="text" class="form-control" id="electricity" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">gas: </span>
+                                    <input type="text" class="form-control" id="gas" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">Internet: </span>
+                                    <input type="text" class="form-control" id="internet" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">TV: </span>
+                                    <input type="text" class="form-control" id="tv" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">loan: </span>
+                                    <input type="text" class="form-control" id="loan" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">insurance: </span>
+                                    <input type="text" class="form-control" id="insurance" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">fuel expenditure: </span>
+                                    <input type="text" class="form-control" id="fuel" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">public transport: </span>
+                                    <input type="text" class="form-control" id="transport" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text" style="background-color: #81599F; color: azure;">Total expenses: </span>
+                                    <input type="text" class="form-control" id="totalexpenses" aria-label="">
+                                    <button class="btn btn-outline btn-lg" type="button" id="inputGroup">Amount</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 mb-4">
+                <fieldset style="border: 2px solid #81599F;">
+                    <legend style="padding: 2vh; text-align: left; font-size: larger">Table:</legend>
+                    <canvas id="myChart" style="width: fit-content; height: max-content;"></canvas>
+                </fieldset>
+                <div class="card p-2 m-2 shadow-lg">
+                    <div class="row g-0 py-1">
+                        <div class="col-md-6">
+                            <img src="pictures/clay-banks-tgquMvhNLc4-unsplash.jpg" class="img-fluid rounded-start" alt="spending">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="card-text">Consumption is the act of using resources to satisfy current needs and wants. It is seen in contrast to investing, which is spending for acquisition of future income.</p>
+                            <p class="card-text"><small class="text-muted"><a href="https://en.wikipedia.org/wiki/Consumption_(economics)">Click for more</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+    <!--Expense tables number 2 --> 
+
+    <div class="container shadow mb-5 mt-5 rounded-3">
+        <div class="row py-2">
+            <div class="col-md-6 mb-4">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">One-off expenses </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">Gifts: </span>
+                                    <input type="text" class="form-control" id="gifts" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">medicines: </span>
+                                    <input type="text" class="form-control" id="medicine" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">visits to doctors: </span>
+                                    <input type="text" class="form-control" id="visit" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">holidays: </span>
+                                    <input type="text" class="form-control" id="holidays" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">renovation: </span>
+                                    <input type="text" class="form-control" id="renovation" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">clothes: </span>
+                                    <input type="text" class="form-control" id="clothes" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">mot/
+                                        car repair: </span>
+                                    <input type="text" class="form-control" id="mot" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text">other one-off expenses: </span>
+                                    <input type="text" class="form-control" id="other" aria-label="">
+                                    <span class="input-group-text">£</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-text" style="color: azure; background-color: #81599F;">Total expenses: </span>
+                                    <input type="text" class="form-control" id="totalexp" aria-label="">
+                                    <button class="btn btn-outline btn-lg" type="button" id="inputGrou">Amount</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 mb-4">
+                <fieldset style="border: 2px solid #81599F;">
+                    <legend style="padding: 2vh; text-align: left; font-size: larger">Table:</legend>
+                    <canvas id="mych" style="width: fit-content; height: max-content;"></canvas>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Final result-->
+
+    <div class="container shadow rounded-3 text-center my-2">
+        <div class="row py-2">
+            <p class="h1" style="text-align: left;">Final result</p>
+            <div class="col-md-6 p-2">
+                <p class="endCal">Income:</p>
+            </div>
+            <div class="col-md-6 p-2">
+                <div class="input-group-text">
+                    <label for="in">                   
+                    <p class="output" id="przy"></p></label>                    
+                </div>
+            </div>
+            <div class="col-md-6 p-2">
+                <p class="endCal">Spending:</p>
+            </div>
+            <div class="col-md-6 p-2">
+                <div class="input-group-text">
+                    <label for="in">
+                    <p class="output" id="wyda"></p></label>                    
+                </div>
+            </div>          
+            <div class="col-md-6 p-2">
+                <p class="endCal">What you will have left? &#128521;</p>
+                <button class="btn btn-outline btn-lg" id="press" >Press ME</button>               
+            </div>
+            <div class="col-md-6 p-2">
+                <div class="input-group-text text-white" id="ChangeBack">
+                    <label for="in">                   
+                    <p class="output" id="output"></p></label>                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="form-container"></div>
+
+
+
+
+
+
+
+
+
+    <!--Footer-->
+
+    <div class="container-fluid text-black text-center" style="height: 30vh; background-color:#81599F;">
+        <ul class="nav justify-content-center mx-auto p-3" style="font-size: larger; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <li class="menu__item"><a class="menu__link m-2" href="#">Home</a></li>
+          <li class="menu__item"><a class="menu__link m-2" href="#">About</a></li>
+          <li class="menu__item"><a class="menu__link m-2" href="#">Services</a></li>
+          <li class="menu__item"><a class="menu__link m-2" href="#">Team</a></li>
+          <li class="menu__item"><a class="menu__link m-2" href="#">Contact</a></li>
+        </ul>
+        <ul class="nav justify-content-center mb-3">
+          <li class="nav-item" id="face">
+            <a class="nav-link" href="#"><i class="icon-facebook"></i></a>
+          </li>
+          <li class="nav-item" id="inst">
+            <a class="nav-link" href="#"><i class="icon-instagram"></i></a>
+          </li>
+          <li class="nav-item" id="link">
+            <a class="nav-link" href="#"><i class="icon-linkedin"></i></a>
+          </li>
+        </ul>
+        <p style="color: azure;">© 2023 Dawka86. All rights reserved</p>
+    </div>
+
+ 
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="java.js"></script>
+    <script src="expenses.js"></script>
+    <script src="canvas.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
