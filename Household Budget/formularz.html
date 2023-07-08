@@ -11,47 +11,47 @@
 </head>
 
 <body>
-    <div class="container shadow rounded-3 mb-5 mt-5" id="measage">
-      <h1 class="h1">Message to us</h1>
-        <form action="" method="GET">
+    <div class="container shadow rounded-3 mb-5 mt-5" id="message">
+        <h1 class="h1">Message to us</h1>
+        <form action="" method="POST">
             <div class="mb-3">
-                <label class="form-label " for="name-2">Name:</label>
-                <input type="text" class="form-control" id="name-2" placeholder="John " name="name">
+                <label class="form-label" for="name-2">Name:</label>
+                <input type="text" class="form-control" id="name-2" placeholder="John" name="name">
             </div>
             <div class="mb-3">
-                <label class="form-label" for="surename-2">Surname:</label>
-                <input type="text" class="form-control" id="surename-2" placeholder="Smith" name="surname">
+                <label class="form-label" for="surname-2">Surname:</label>
+                <input type="text" class="form-control" id="surname-2" placeholder="Smith" name="surname">
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Send</button>
                 <button type="reset" class="btn btn-secondary">Clear</button>
             </div>
         </form>
-
-
-        <form action="mailto:jan.kowalski@adava.com" method="GET" enctype="text/plain">
+    
+        <form action="mailto:dawidkuptel@onet.pl" method="POST" enctype="text/plain">
             <div class="row align-items-center">
                 <div class="col-md-7 mb-3">
-                    <label class="form-label" for="subject"></label>
-                    <input type="text" class="form-control" id="subject">
-                    <label class="form-label" for="body-1">treść</label>
-                    <textarea class="form-control" id="body-1"></textarea>
+                    <label class="form-label" for="subject">Subject:</label>
+                    <input type="text" class="form-control" id="subject" name="subject">
+                    <label class="form-label" for="body-1">Message:</label>
+                    <textarea class="form-control" id="body-1" name="message"></textarea>
                 </div>
-
+    
                 <div class="col-md-5 mb-3">
                     <div class="card w-100 text-center">
-                        <h5 class="card-header theme-bg-secondary theme-text-light">Gwarancja odpowiedzi</h5>
+                        <h5 class="card-header theme-bg-secondary theme-text-light">Response Guarantee</h5>
                         <div class="card-body theme-bg-lightyellow">
-                            Zazwyczaj odpowiadamy na wiadomości w przciągu dnia roboczego.
+                            We usually respond to messages within one business day.
                         </div>
                         <div class="card-body theme-bg-light">
-                            <button class="btn btn-outline">Wyślij</button>
+                            <button class="btn btn-outline" type="submit">Send</button>
                         </div>
                     </div>
                 </div>
-          </div>
-  </form>
+            </div>
+        </form>
     </div>
+    
 
 
 
