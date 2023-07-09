@@ -30,6 +30,7 @@ document.getElementById("inputGroup").addEventListener("click", function() {
     inputTotal.value = result;
 
 })
+const inputFood = document.getElementById("food");
 const inputGifs = document.getElementById("gifts");
 const inputMedicine = document.getElementById("medicine");
 const inputDoc = document.getElementById("visit");
@@ -38,21 +39,24 @@ const inputRen = document.getElementById("renovation");
 const inputClot = document.getElementById("clothes");
 const inputMot = document.getElementById("mot");
 const inputO = document.getElementById("other");
+const inputTravel = document.getElementById("travel");
 const totalOneOff = document.getElementById("totalexp");
 
-function totalSumOff(gifts, medicine, visit, holidays, renovation, clothes, mot, other) {
-    return (gifts / 1) + (medicine / 1) + (visit / 1) + (holidays / 1) + (renovation / 1) + (clothes / 1) + (mot / 1) + (other / 1);
+function totalSumOff(food, gifts, medicine, visit, holidays, renovation, clothes, mot, travel, other) {
+    return (food / 1)+ (gifts / 1) + (medicine / 1) + (visit / 1) + (holidays / 1) + (renovation / 1) + (clothes / 1) + (mot / 1) + (travel/1)+ (other / 1);
 
 }
 document.getElementById("inputGrou").addEventListener("click", function() {
+    let food = inputFood.value;
     let gifts = inputGifs.value;
     let medicine = inputMedicine.value;
     let visit = inputDoc.value;
     let holidays = inputHolliday.value;
     let renovation = inputRen.value;
     let clothes = inputClot.value;
+    let travel = inputTravel.value;
     let mot = inputMot.value;
     let other = inputO.value;
-    let result = totalSumOff(gifts, medicine, visit, holidays, renovation, clothes, mot, other, );
+    let result = totalSumOff(food, gifts, medicine, visit, holidays, renovation, clothes, mot, travel, other, );
     totalOneOff.value = result;
 })
