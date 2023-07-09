@@ -71,7 +71,7 @@ const ctxx = document.getElementById('mych').getContext('2d');
 const mych = new Chart(ctxx, {
     type: 'bar',
     data: {
-        labels: ["gifts", "medicine", "visit", "holidays", "renovation", "clothes", "mot", "other", ],
+        labels: ["food","gifts", "medicine", "visit", "holidays", "renovation", "clothes", "mot","travel", "other", ],
         datasets: [{
             label: 'One-off expenses',
             data: [],
@@ -112,6 +112,7 @@ pusch.addEventListener("click", puschSum);
 
 function puschSum() {
 
+    const inputFood = document.getElementById("food");
     const inputGifs = document.getElementById("gifts");
     const inputMedicine = document.getElementById("medicine");
     const inputDoc = document.getElementById("visit");
@@ -119,7 +120,10 @@ function puschSum() {
     const inputRen = document.getElementById("renovation");
     const inputClot = document.getElementById("clothes");
     const inputMot = document.getElementById("mot");
+    const inputTravel = document.getElementById("travel");
     const inputO = document.getElementById("other");
+
+    mych.data.datasets[0].data.push(inputFood.value);
 
 
     mych.data.datasets[0].data.push(inputGifs.value);
@@ -129,6 +133,7 @@ function puschSum() {
     mych.data.datasets[0].data.push(inputRen.value);
     mych.data.datasets[0].data.push(inputClot.value);
     mych.data.datasets[0].data.push(inputMot.value);
+    mych.data.datasets[0].data.push(inputTravel.value);
     mych.data.datasets[0].data.push(inputO.value);
 
     mych.update();
