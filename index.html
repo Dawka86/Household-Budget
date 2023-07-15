@@ -12,6 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
     <title>Household Budget</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    
 </head>
 <body>
 
@@ -44,9 +46,6 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="team.html">Team</a>
-              </li>
-              <li class="nav-item">
-                <button id="contact-button" onclick="location.href=`#measage`">Contact </button>
               </li>
             </ul>
           </div>
@@ -243,8 +242,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-md-6 mb-4 p-1">
-                <div class="card p-2 m-2 shadow" id="nooPrint">
+            <div class="col-md-6 mb-4">
+                <div class="card p-2 m-2 mb-5 shadow" id="nooPrint">
                     <div class="row g-0 py-1">
                         <div class="col-md-6">
                             <img src="pictures/clay-banks-tgquMvhNLc4-unsplash.jpg" class="img-fluid rounded-start" alt="spending">
@@ -395,8 +394,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-md-6 mb-4 p-1">
-                <div class="card p-2 m-2 shadow" id="noooPrint">
+            <div class="col-md-6 mb-4">
+                <div class="card p-2 m-2 mb-5 shadow" id="noooPrint">
                     <div class="row g-0 py-1">
                         <div class="col-md-6">
                             <img src="pictures/regularguy-eth-K_3UV1ZFcJ0-unsplash.jpg" class="img-fluid rounded-start" alt="expense">
@@ -420,13 +419,13 @@
 
     <!--Final result-->
 
-    <div class="container shadow rounded-3 text-center my-2 p-2">
+    <div class="container shadow rounded-3 text-center my-2 p-2 mb-4">
+        <p class="h1" style="text-align: left; ">Final result</p>
         <div class="row py-2">
-            <p class="h1" style="text-align: left;">Final result</p>
-            <div class="col-md-6 p-2">
+            <div class="col-md-6 p-2"> 
                 <p class="endCal">Income:</p>
             </div>
-            <div class="col-md-6 p-2">
+            <div class="col-md-6 p-3">
                 <div class="input-group-text">
                     <label for="in" class="custom-label">                
                     <p class="output" id="przy"></p></label>   
@@ -436,7 +435,7 @@
             <div class="col-md-6 p-2">
                 <p class="endCal">Spending:</p>
             </div>
-            <div class="col-md-6 p-2">
+            <div class="col-md-6 p-3">
                 <div class="input-group-text">
                     <label for="in" class="custom-label">
                     <p class="output" id="wyda"></p></label>
@@ -447,7 +446,7 @@
                 <p class="endCal">What you will have left? &#128521;</p>
                 <button class="btn btn-outline btn-lg" id="press" >Press ME</button>               
             </div>
-            <div class="col-md-6 p-2">
+            <div class="col-md-6 p-3">
                 <div class="input-group-text text-white" id="ChangeBack">
                     <label for="in" class="custom-label">                   
                     <p class="output" id="output"></p></label>
@@ -517,7 +516,6 @@
           <li class="menu__item"><a class="menu__link m-2" href="#">Home</a></li>
           <li class="menu__item"><a class="menu__link m-2" href="about.html">About</a></li>
           <li class="menu__item"><a class="menu__link m-2" href="team.html">Team</a></li>
-          <li class="menu__item"><a class="menu__link m-2" href="#">Contact</a></li>
         </ul>
         <ul class="nav justify-content-center mb-3">
           <li class="nav-item" id="face">
